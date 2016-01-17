@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AUTOMOBILE PERFORMANCE PREDICTION</title>
+  <meta charset="utf-8">
+  <meta name="description" content="AUTOMOBILE PERFORMANCE PREDICTION">
+  <meta name="author" content="Jidan Zhong">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>AUTOMOBILE PERFORMANCE PREDICTION</h1>
+    <h2></h2>
+    <p>Jidan Zhong<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Fuel Economy</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Do you always worry about how much oil your car is consuming when you go out? </p></li>
+<li><p>Do you always get annoyed that your car eats more oil than promised by the dealers?</p></li>
+<li><p>Do you want to own a fuel economical car but don&#39;t know where to start looking?</p></li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><a href=http://clipproject.info/freecartoons/images/joomgallery/originals/cars_cartoons_and_automotive_jokes_6/free_auto_cartoon_-_fuel_consumption_20120620_1823139837.png>
+<img src="http://clipproject.info/freecartoons/images/joomgallery/originals/cars_cartoons_and_automotive_jokes_6/free_auto_cartoon_-_fuel_consumption_20120620_1823139837.png" alt="200">
+</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><a href=https://s3.amazonaws.com/lowres.cartoonstock.com/transport-fuel-petrol_station-gas_station-diesel_engine-car-mfln3952_low.jpg>
+<img src="https://s3.amazonaws.com/lowres.cartoonstock.com/transport-fuel-petrol_station-gas_station-diesel_engine-car-mfln3952_low.jpg" alt="160">
+</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Automobile Performance Prediction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>With our &#39;Automobile Performance Prediction&#39; App, the car&#39;s performance can be estimated with a given horse power and transmission type.</p>
+
+<p>You won&#39;t need to worry about buying the oil-consuming car and getting poor so quickly.</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><a href=http://images.dailytech.com/nimage/22990_large_csm-cartoon-mpg-wallet-01.jpg>
+<img src="http://images.dailytech.com/nimage/22990_large_csm-cartoon-mpg-wallet-01.jpg" alt="200">
+</a></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><a href=https://www.colourbox.com/preview/8669971-poor-man.jpg>
+<img src="https://www.colourbox.com/preview/8669971-poor-man.jpg" alt="50">
+</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="3" style="background:;">
+  <hgroup>
+    <h2>Theory</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Simply speaking, we used the data &quot;mtcars&quot; from the R package to generate a regression model. In this model the automobile performance is significantly related to horsepower and transmission type. Other variables, such as number of cylinders, number of gears, weight of the vehicle, were not included in the model as we found that they are highly correlated with transmission type.</p>
+
+<pre><code class="r">fit &lt;- lm(mpg ~ hp +factor(am), data=mtcars)
+summary(fit)$coefficients
+</code></pre>
+
+<pre><code>##               Estimate  Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 26.5849137 1.425094292 18.654845 1.073954e-17
+## hp          -0.0588878 0.007856745 -7.495191 2.920375e-08
+## factor(am)1  5.2770853 1.079540576  4.888270 3.460318e-05
+</code></pre>
+
+<p>With this model, when fit in with new horsepower value and transmission type, it will give you the corresponding estimated value of miles per gallon. It will be easily for you to understand the car&#39;s performance and whether your dealers tell you the truth.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="4" style="background:;">
+  <hgroup>
+    <h2>Don&#39;t wait any more!</h2>
+  </hgroup>
+  <article data-timings="">
+    <h2>Click:</h2>
+
+<p><a href="https://pestoo0221.shinyapps.io/shinyproduct/">https://pestoo0221.shinyapps.io/shinyproduct/</a></p>
+
+<h2>Give it a try and start to save money and protect the encironment at the same time!</h2>
+
+<p><a href="http://previews.123rf.com/images/sharpnose/sharpnose1109/sharpnose110900003/10443990-green-car-save-our-planet-Stock-Vector-cartoon.jpg"></p>
+
+<div style='text-align: center;'>
+    <img height='300' src= http://previews.123rf.com/images/sharpnose/sharpnose1109/sharpnose110900003/10443990-green-car-save-our-planet-Stock-Vector-cartoon.jpg />
+</div>
+
+<p></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Fuel Economy'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Automobile Performance Prediction'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Theory'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Don&#39;t wait any more!'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
